@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Smart Professional IDE</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">E-Smart <span>IDE</span></div>
+        <div class="btn-group">
+            <button class="search-toggle" onclick="toggleSearch()">🔍</button>
+            <button class="download-btn" onclick="downloadProject()">Download</button>
+            <button class="preview-btn" onclick="openFullScreen()">Full Preview</button>
+            <button class="run-btn" onclick="runCode()">Run Site</button>
+        </div>
+    </div>
+
+    <div id="search-bar" class="search-container">
+        <input type="text" id="find-input" placeholder="Find text...">
+        <input type="text" id="replace-input" placeholder="Replace with...">
+        <button onclick="replaceCode()">Replace All</button>
+    </div>
+
+    <div class="main-layout">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <span>FILES</span>
+                <button onclick="addNewFile()">+</button>
+            </div>
+            <div id="file-list"></div>
+        </div>
+
+        <div class="editor-container">
+            <div class="toolbar">
+                <button onclick="insertChar('<')">&lt;</button>
+                <button onclick="insertChar('>')">&gt;</button>
+                <button onclick="insertChar('{')">{</button>
+                <button onclick="insertChar('}')">}</button>
+                <button onclick="insertChar(';')">;</button>
+                <button onclick="insertChar('\"')">"</button>
+                <button onclick="insertChar('=')">=</button>
+                <button onclick="insertChar('/')">/</button>
+            </div>
+
+            <div class="editor-section">
+                <label id="active-file-name">index.html</label>
+                <textarea id="main-editor" spellcheck="false" autocomplete="off"></textarea>
+                <div id="suggestions-box" class="suggestion-box"></div>
+                <div id="error-console" class="error-log">Ready.</div>
+            </div>
+
+            <div class="preview-section">
+                <label>Live Preview</label>
+                <iframe id="output-window"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>
