@@ -1,0 +1,47 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f0f0f; color: white; font-family: 'Segoe UI', sans-serif; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+/* Header */
+.header { background: #1e1e1e; padding: 10px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #333; }
+.logo span { color: #007bff; font-weight: bold; }
+.btn-group button { border: none; padding: 6px 12px; border-radius: 4px; margin-left: 5px; cursor: pointer; font-size: 12px; font-weight: bold; }
+.run-btn { background: #28a745; color: white; }
+.download-btn { background: #007bff; color: white; }
+
+/* Search Bar */
+.search-container { background: #252526; padding: 8px; display: none; gap: 10px; border-bottom: 1px solid #333; }
+.search-container input { background: #3e3e42; border: 1px solid #555; color: white; padding: 5px; flex: 1; outline: none; border-radius: 3px; }
+.search-container button { background: #007bff; color: white; border: none; padding: 5px 15px; border-radius: 3px; }
+
+/* Sidebar */
+.main-layout { display: flex; flex-grow: 1; overflow: hidden; }
+.sidebar { width: 90px; background: #151515; border-right: 1px solid #333; overflow-y: auto; }
+.sidebar-header { padding: 10px; font-size: 10px; display: flex; justify-content: space-between; color: #888; border-bottom: 1px solid #222; }
+.sidebar-header button { background: none; color: white; border: none; font-size: 18px; cursor: pointer; }
+
+.file-item-container { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #222; }
+.file-item { flex-grow: 1; padding: 12px 5px; font-size: 10px; cursor: pointer; color: #aaa; overflow: hidden; text-overflow: ellipsis; }
+.file-item.active { background: #2d2d2d; color: #007bff; border-left: 3px solid #007bff; }
+.del-btn { color: #555; padding: 10px; cursor: pointer; }
+.del-btn:hover { color: #ff4444; }
+
+/* Editor */
+.editor-container { flex-grow: 1; display: flex; flex-direction: column; position: relative; }
+.toolbar { background: #252526; display: flex; overflow-x: auto; padding: 8px; gap: 8px; border-bottom: 1px solid #333; }
+.toolbar button { background: #3e3e42; color: white; border: none; padding: 8px 15px; min-width: 45px; border-radius: 3px; }
+
+.editor-section { height: 60%; background: #1e1e1e; display: flex; flex-direction: column; position: relative; }
+.editor-section label { background: #252526; font-size: 10px; padding: 5px 10px; color: #007bff; }
+textarea { flex-grow: 1; background: transparent; color: #dcdcdc; border: none; outline: none; padding: 10px; font-family: 'Courier New', monospace; font-size: 14px; resize: none; }
+
+/* Suggestions */
+.suggestion-box { position: absolute; background: #2d2d2d; border: 1px solid #007bff; z-index: 1000; display: none; max-height: 150px; overflow-y: auto; width: 180px; left: 20px; top: 50px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+.sugg-item { padding: 10px; border-bottom: 1px solid #333; font-size: 12px; color: #ccc; cursor: pointer; }
+.sugg-item:hover { background: #007bff; color: white; }
+
+/* Error Console */
+.error-log { background: #1e1e1e; color: #888; font-size: 11px; padding: 8px; border-top: 1px solid #333; max-height: 50px; overflow-y: auto; }
+
+/* Preview */
+.preview-section { height: 40%; background: white; border-top: 2px solid #333; }
+#output-window { width: 100%; height: 100%; border: none; }
